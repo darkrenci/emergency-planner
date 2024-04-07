@@ -1,0 +1,118 @@
+*{
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    padding: 0px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo{
+    font-size: 20px;
+    color: rgb(45, 44, 44);
+}
+
+header .navmen ul{
+list-style: none;
+}
+
+header .navmen ul li{
+    position: relative;
+    float: left;
+}
+
+header .navmen ul li a{
+    font: 20px;
+    padding: 20px;
+    color: rgb(45, 44, 44);
+    display: block;
+}
+header .navmen ul li a:hover{
+    background-color: rgb(45, 44, 44);
+    color: white;
+}
+header .navmen ul li ul{
+    position: absolute;
+    left: 0;
+    width: 150px;
+    background: white;
+    display: none;
+}
+header .navmen ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+header .navmen ul li:focus-within > ul,
+header .navmen ul li:hover > ul{
+    display: initial;
+}
+
+#menu {
+    display: none;
+}
+
+header label{
+    font-size: 20px;
+    color: rgb(45, 44, 44);
+    cursor: pointer;
+    display: none;
+}
+
+
+@media (max-width: 992px){
+    header{
+        padding: 20px;
+    }
+
+    header label{
+        display: initial;
+    }
+
+    header .navmen{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid rgba(0, 0, 0, .1);
+        display: none;
+    }
+
+    header .navmen ul li{
+        width: 100%;
+    }   
+
+    header .navmen ul li ul{
+        position: relative;
+        width: 100%;
+    }
+
+    header .navmen ul li ul li{
+        background-color: #eee;
+    }
+
+    #menu:checked ~  .navmen{
+        display: initial;
+    }
+
+
+
+}
